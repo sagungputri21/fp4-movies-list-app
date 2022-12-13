@@ -19,7 +19,7 @@ export const Home = () => {
 
         if(responseJson.Search) {
             setMovie(responseJson.Search)
-    }
+        }
     } catch (err) {
       console.log("error ===> ", err);  
     }

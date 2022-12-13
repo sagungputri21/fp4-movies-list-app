@@ -4,13 +4,13 @@ import { useSearchParams } from "react-router-dom";
 import MovieList from "../component/movieList";
 
 const SearchPage = () => {
-    const [movie, setMovie] = useState();
+    const [movie, setMovie] = useState([]);
     const [searchParams] = useSearchParams();
     const searchTerm = searchParams.get(`s`)
 
-    const movieData = async() => {
+    const movieDataSearch = async() => {
         try{
-            const url = `http://www.omdbapi.com/?s=${searchParams.get(`s`)}&apikey=2146f476`
+            const url = `http://www.omdbapi.com/?s=spider&apikey=2146f476`
             const data = await fetch(url)
             const responseJson = await data.json()
             if(responseJson.Search) {
@@ -24,7 +24,7 @@ const SearchPage = () => {
     };
 
     useEffect(() => {
-        movieData();
+        movieDataSearch();
     }, [])
 
     console.log(movie)
@@ -34,12 +34,9 @@ const SearchPage = () => {
       };
 
     return(
-        <div className="container-fluid movie-app">
-            <h1 title={capitalizeFirstLowercaseRest(`${searchTerm}`)}></h1>
-            {movie?.slice(0, 20).map(() => (
-                <MovieList movies={movie}/>
-            ))}
-            
+        <div className="container-xxl">
+            <h1>{capitalizeFirstLowercaseRest(`${searchTerm}`)} Movies</h1>
+            <MovieList movies={movie}/>
         </div>
     )
 }
