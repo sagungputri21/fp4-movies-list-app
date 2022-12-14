@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #13192D;
 }
 
 .App-logo {
@@ -35,4 +36,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
 }
