@@ -1,0 +1,11 @@
+.active {
+  @apply text-xs md:text-sm font-semibold text-indigo-700 uppercase;
+}
+
+.inactive {
+  @apply text-xs md:text-sm font-medium text-gray-800 hover:text-indigo-700 uppercase;
+}
+
+.all-naigation {
+  display: flex;
+}

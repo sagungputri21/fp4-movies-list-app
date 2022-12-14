@@ -10,7 +10,7 @@ const SearchPage = () => {
 
     const movieDataSearch = async() => {
         try{
-            const url = `http://www.omdbapi.com/?s=spider&apikey=2146f476`
+            const url = `http://www.omdbapi.com/?s=${searchParams.get(`s`)}&apikey=2146f476`
             const data = await fetch(url)
             const responseJson = await data.json()
             if(responseJson.Search) {

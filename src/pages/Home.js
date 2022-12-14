@@ -32,8 +32,8 @@ useEffect(() => {
   console.log(movie)
 
   return (
-    <div className="container-fluid movie-app">
-      <div className="row d-flex align-items-center mt-4 mb-4">
+    <div className="container-fluid movie-app mt-24">
+      <div className="row d-flex align-items-center mb-4 mt-24">
         <MovieListHeading heading='Movies'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
 

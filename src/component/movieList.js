@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import "./cards/Card.css"
+import "../styles/Card.css" 
 
 const MovieList = (props) => {
 	return (
