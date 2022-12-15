@@ -28,18 +28,6 @@ const SearchBox = (props) => {
 			</Button>
 			
 		</div>
-		// <div className='col col-sm-4'>
-		// 	<input
-		// 		className='form-control'
-		// 		value={props.value}
-		// 		onChange={(event) => setValue(event.target.value)}
-		// 		placeholder='Type to search...'
-		// 	></input>
-
-		// 	<Button className="button-custom" onClick={() => movieData()}>
-		// 		Search
-		// 	</Button>
-		// </div>
 	);
 };
 

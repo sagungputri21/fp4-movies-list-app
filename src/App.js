@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import SearchPage from './pages/searchPage';
 import WishlistPage from './pages/WishlistPage';
 import NavbarComponent from './component/Navbar/Navbar';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/search' element={<SearchPage />} />
         <Route path='/wishlist' element={<WishlistPage />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

@@ -38,7 +38,7 @@ useEffect(() => {
         <MovieListHeading heading='Popular Star Wars Movies'/>
       </div>
       <p className='text-gray-300 text-start mb-4'>Total : {`${movie.length}`} items</p>
-      <div className='flex flex-wrap gap-4'>
+      <div className='flex flex-wrap gap-5'>
         <MovieList movies={movie}/>
       </div>
     </div>

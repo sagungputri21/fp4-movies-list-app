@@ -1,21 +1,19 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import "../styles/Card.css" 
+import MovieCard from "./cards/MovieCard";
 
 const MovieList = (props) => {
 	return (
 		<>
 			{props.movies.map((movie) => (
-				<div style={{width: '22rem'}} className="flex flex-wrap overflow-hidden">
-					{/* <Card style={{height: '460px'}}>
-						<div className='img-fluid overflow-hidden'>
-							<img src={movie.Poster} alt='movie'></img>
-							<h4 className="news-title">
-								{movie.Title}
-							</h4>
-						</div>
-					</Card> */}
-					<p className="text-[100px]">hahahhhahah</p>
+				<div className="gapping flex flex-wrap overflow-hidden">
+					<MovieCard 
+						Title={movie.Title}
+						Poster={movie.Poster}
+						Year={movie.Year}
+						Type={movie.Type}
+					/>
 				</div>
 			))}
 		</>

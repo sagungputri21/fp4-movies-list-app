@@ -38,7 +38,11 @@
   }
 }
 
-.movie-app > .row {
+/* .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+} */
+
+.gapping {
+  gap: -24px;
 }

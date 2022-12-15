@@ -39,7 +39,7 @@ const SearchPage = () => {
                 {capitalizeFirstLowercaseRest(`${searchTerm}`)} <span className="text-white">Movies</span>
             </h2>
             <p className='text-gray-300 text-start mb-4'>Result of <span className="font-bold">{`${searchParams.get(`s`)}`}</span> movies : ({`${movie.length}`}) items</p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-5">
                 <MovieList movies={movie}/>
             </div>
         </div>
