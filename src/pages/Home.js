@@ -1,9 +1,6 @@
 import '../App.css';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import MovieList from '../component/movieList';
-import SearchBox from '../component/searchInput';
 import MovieListHeading from '../component/heading';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
@@ -13,7 +10,7 @@ export const Home = () => {
   
   const movieData = async() => {
     try{
-        const url = `http://www.omdbapi.com/?s=spiderman&apikey=2146f476`
+        const url = `http://www.omdbapi.com/?s=star wars&apikey=2146f476`
         const response = await axios.get(url);
         setMovie(response.data.Search)
     } catch (err) {
