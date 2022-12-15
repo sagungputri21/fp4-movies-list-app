@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import MovieList from '../component/movieList';
 import SearchBox from '../component/searchInput';
 import MovieListHeading from '../component/heading';
+import { Container } from 'react-bootstrap';
 
 export const Home = () => {
   const [movie, setMovie] = useState([]);
-  const [searchValue, setSearchValue] = useState('')
   
   const movieData = async() => {
     try{
@@ -32,17 +32,17 @@ useEffect(() => {
   console.log(movie)
 
   return (
+    <Container>
     <div className="container-fluid movie-app mt-24">
-      <div className="row d-flex align-items-center mb-4 mt-24">
-        <MovieListHeading heading='Movies'/>
-        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-
+      <div className="align-items-center mb-4 mt-36">
+        <MovieListHeading heading='Popular Star Wars Movies'/>
       </div>
-
-      <div className='row'>
+      <p className='text-gray-300 text-start mb-4'>Total : {`${movie.length}`} items</p>
+      <div className='flex flex-wrap gap-4'>
         <MovieList movies={movie}/>
       </div>
     </div>
+    </Container>
   );
 }
 
