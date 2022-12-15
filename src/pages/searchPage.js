@@ -34,9 +34,14 @@ const SearchPage = () => {
       };
 
     return(
-        <div className="container-xxl">
-            <h1>{capitalizeFirstLowercaseRest(`${searchTerm}`)} Movies</h1>
-            <MovieList movies={movie}/>
+        <div className="container-xxl mt-32">
+            <h2 className="text-start text-4xl text-blue-400 font-semibold mb-4">
+                {capitalizeFirstLowercaseRest(`${searchTerm}`)} <span className="text-white">Movies</span>
+            </h2>
+            <p className='text-gray-300 text-start mb-4'>Result of <span className="font-bold">{`${searchParams.get(`s`)}`}</span> movies : ({`${movie.length}`}) items</p>
+            <div className="flex flex-wrap gap-5">
+                <MovieList movies={movie}/>
+            </div>
         </div>
     )
 }

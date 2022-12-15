@@ -14,31 +14,20 @@ const SearchBox = (props) => {
 	}
 
 	return (
-		<div className="col col-sm-4">
+		<div className="flex items-center gap-1">
 			<input
 				type="text" 
-				placeholder="search here..."
+				placeholder="  search here..."
 				value={text}
 				onChange={(e) => setValue(e.target.value)}
+				className="outline outline-1 rounded-sm outline-indigo-300 focus:ooutline-none focus:bg-indigo-200 focus:text-black"
 			/>
 			
-			<Button className="button-custom" onClick={() => movieData()}>
+			<Button className="button-custom text-sm py-1" onClick={() => movieData()}>
 				Search 
 			</Button>
 			
 		</div>
-		// <div className='col col-sm-4'>
-		// 	<input
-		// 		className='form-control'
-		// 		value={props.value}
-		// 		onChange={(event) => setValue(event.target.value)}
-		// 		placeholder='Type to search...'
-		// 	></input>
-
-		// 	<Button className="button-custom" onClick={() => movieData()}>
-		// 		Search
-		// 	</Button>
-		// </div>
 	);
 };
 

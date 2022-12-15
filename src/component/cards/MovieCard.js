@@ -1,77 +1,44 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-
-const MovieCard = () => {
-    return (
-      <Card>
-
-      </Card>
-    )
-}
-
-export default MovieCard;
-
-import React from 'react';
-import { Card } from 'react-bootstrap'
-import './style/Card.css'
-import CustomButton from "../Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
-import NewsPageButton from '../Button/NewsPageButton';
 import { useDispatch } from "react-redux";
-import { saveActions } from '../../features/news/newsSlice';
+import { saveActions } from '../../features/wishlistSlice';
 
-const NewsCard = ({ item, alt }) => {
-  const { imageURL, name, title, date, author, path, desc } = item;
-
+const MovieCard = ({ Title, Poster, Type, imdbID, Plot, Year }) => {
+  
   const dispatch = useDispatch();
   const saveUnsavedData = () => {
     dispatch(
       saveActions.saveItem({
-        imageURL, name, title, author, path, desc
+        Title, Poster, Type, imdbID, Plot, Year
       })
     );
   };
 
-    return (
-      <div style={{ width: '22rem' }} className="news-card">
-        <Card style={{height: '460px'}}>
-          {/*images*/}
-          <img className="img-fluid" 
-            src={`${imageURL == null ? "/assests/image-not-found.jpg" : `${imageURL}`}`} 
-            alt={alt} 
-          />
-          <div className="news-content"> {/*date and name*/}
-            <p className="flex text-date">
-              {new Date(`${date}`).toDateString().slice(3)}
-              <span className="mx-1 rounded-full">{" | "}</span>
-              {name}
-            </p>
-            <h4 className='news-title'> {/*news's title*/}
-              {`${title.length >= 110 ? `${title.substring(0, 110)}...` : `${title}`}`}
-            </h4>
-            {/*author*/}
-            <p className={`text-author pb-1 ${author === null || author === "" || author.length >= 40 ? "visually-hidden" : ""}`} 
-              >Author : {author}
-            </p>
-            <div className="grid btn-primary button gap-2.5">
-              <NewsPageButton path={path} />
-              <CustomButton 
-                onClick={saveUnsavedData}
-                extraStyle={"btn-light"}
-                children={
-                  // <i className="fa-light fa-bookMark"></i>
-                  <div className="">
-                    <FontAwesomeIcon icon={faBookmark} />
-                  </div>
-                }
-              />
-            </div>
+  return (
+    <div className="mb-5">
+      <div className="bg-[#20283E] rounded-lg w-[270px] h-[365px]">
+        <img
+          className="p-2.5 h-[300px] w-full"
+          src={`${
+            Poster == null ? "/assests/image-not-found.jpg" : `${Poster}`
+          }`}
+        />
+        <section className="p-3 overflow-hidden -mt-10 flex justify-between mx-auto bg-[#323B54] rounded-xl w-[270px]">
+        <div className="text-start flex flex-col text-white w-3/4 mt-4">
+          <h5 className="font-semibold text-[18px]">{Title}</h5>
+          <div className="flex gap-3 text-sm">
+            <p>{Year}</p>
+            {"|"}
+            <p>{Type}</p>
           </div>
-        </Card>   
+        </div>
+        <button onClick={saveUnsavedData} className="outline-none bg-transparent flex items-start my-auto">
+          <img src="/assests/bookmark.png" className="w-9 h-8" />
+        </button>
+      </section>
       </div>
-    )
+    </div>
+  );
 };
-  
-export default NewsCard;
-  
+
+export default MovieCard;
