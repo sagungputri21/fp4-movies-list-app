@@ -12,7 +12,7 @@ export const Home = () => {
   
   const movieData = async() => {
     try{
-        const url = `http://www.omdbapi.com/?s=star wars&apikey=2146f476`
+        const url = `http://www.omdbapi.com/?s=spiderman&apikey=2146f476`
 
         const response = await fetch(url)
         const responseJson = await response.json()
